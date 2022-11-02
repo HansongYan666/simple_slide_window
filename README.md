@@ -3,6 +3,7 @@ a simpe script for slicing the fasta sequence, for example, you can use this to 
 usage: python slide.py [-h] -i I -o O -w W
 
 optional arguments
+
   -h, --help  show this help message and exit
   
   -i I        input fasta file name
