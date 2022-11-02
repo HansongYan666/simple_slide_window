@@ -4,8 +4,11 @@ usage: python slide.py [-h] -i I -o O -w W
 
 optional arguments:
   -h, --help  show this help message and exit
+  
   -i I        input fasta file name
+  
   -o O        output fasta file name
+  
   -w W        window size
   
 test data:
