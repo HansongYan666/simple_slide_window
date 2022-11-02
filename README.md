@@ -12,5 +12,5 @@ optional arguments
   
   -w W        window size
   
-test data:
-
+Example:
+  python slide.py -i test.fa -o result.fa -w 29
