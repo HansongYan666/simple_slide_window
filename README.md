@@ -2,7 +2,7 @@
 a simpe script for slicing the fasta sequence, for example, you can use this to infer siRNA with a sequence from cds.
 usage: python slide.py [-h] -i I -o O -w W
 
-optional arguments:
+optional arguments
   -h, --help  show this help message and exit
   
   -i I        input fasta file name
