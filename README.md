@@ -13,4 +13,4 @@ optional arguments
   -w W        window size
   
 Example:
-  python slide.py -i test.fa -o result.fa -w 29
+  python slide.py -i test.fa -o result.fa -w 21
