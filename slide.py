@@ -31,7 +31,7 @@ def simple_blast(queryfasta, subjectfasta, slide_size):
     dbprefix = subjectfasta.split('/')[-1].split('.')[0]
     queryprefix = queryfasta.split('/')[-1].split('.')[0]
     cmd = f"makeblastdb -dbtype nucl -in {subjectfasta} -out {dbprefix} -hash_index -parse_seqids\n"
-    cmd += f"blastn -db Hc_genome -query V_ATPase_A.txt -out {queryprefix}_{dbprefix}.blast.out -outfmt 7 -task blastn-short -word_size 7 -evalue 1\n"
+    cmd += f"blastn -db {dbprefix} -query {queryfasta} -out {queryprefix}_{dbprefix}_{slide_size}.blast.out -outfmt 6 -task blastn-short -word_size 7 -evalue 1\n"
     os.system(cmd)
 
 if __name__ == "__main__":
