@@ -26,7 +26,7 @@ def filter_blast(blast_out, fasta):
         blast_length = int(tmp[3])
         gene = tmp[1]
         mismatch = tmp[5]
-        gap = [6]
+        gap = tmp[6]
         total = int(mismatch) + int(gap)
         info = f"{blast_length}\t{mismatch}\t{gap}"
         if blast_length >= 17 and blast_length - total >= 15:
@@ -37,7 +37,7 @@ def filter_blast(blast_out, fasta):
                 dic[gene] += 1
     for k in dic.keys():
         out1.write(f"{k}\t{dic[k]}\t{dic_ref[k]}\n")
-    for key in dicinfo.keys:
+    for key in dicinfo.keys():
         for line in dicinfo[key].keys():
             out2.write(line)
 
