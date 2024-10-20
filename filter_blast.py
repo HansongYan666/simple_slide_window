@@ -16,21 +16,22 @@ def filter_blast(blast_out, fasta):
             name = line.strip().split()[0][1:]
             seq = ""
         else:
-            seq += line
+            seq += line.strip()
     dic_ref[name] = seq
 
     dic = {}
     dicinfo = defaultdict(dict)
     for i in open(blast_out,'r').readlines():
-        tmp = i.strip().split()
+        tmp = i.strip().split("\t")
         blast_length = int(tmp[3])
         gene = tmp[1]
-        mismatch = tmp[5]
-        gap = tmp[6]
+        mismatch = tmp[4]
+        gap = tmp[5]
         total = int(mismatch) + int(gap)
+        print(total)
         info = f"{blast_length}\t{mismatch}\t{gap}"
         if blast_length >= 17 and blast_length - total >= 15:
-            dicinfo[gene][i] = info
+            dicinfo[gene][i] = i
             if gene not in dic:
                 dic[gene] = 1
             else:
